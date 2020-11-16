@@ -1,10 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Single SPA Example</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Single SPA React Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
+    <meta content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
+          http-equiv="Content-Security-Policy">
+    <meta content="systemjs-importmap" name="importmap-type"/>
+    <script type="systemjs-importmap">{
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.development.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.development.js",
+        "@georgy/root-config": "https://georgybu.github.io/single-spa-react/georgy-root-config.js",
+        "@georgy/home-page": "https://georgybu.github.io/single-spa-react/georgy-home-page.js"
+      }
+    }
+    </script>
+    <link as="script" href="https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js" rel="preload">
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.16.0/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/amd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.min.js"></script>
 </head>
 <body>
-<script src="./index.js"></script>
+<main></main>
+<script>System.import('@georgy/root-config');</script>
+<import-map-overrides-full dev-libs show-when-local-storage="devtools"></import-map-overrides-full>
 </body>
 </html>
